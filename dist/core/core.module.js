@@ -16,7 +16,6 @@ import { CoreStore } from './core.store';
 import { NativeStorage } from "@ionic-native/native-storage";
 import { ValidatorModule } from "./directives/validator/validator.module";
 import { NoContentModule } from "./components/no-content/no-content.module";
-import { ProfileModule } from "./providers/profile/profile.module";
 export * from './core.store';
 export { NavStack } from './providers/nav.service';
 export { DesService } from './providers/des.service';
@@ -29,7 +28,6 @@ export { AvatarModule } from './components/avatar/avatar.module';
 export { MenuModule } from './directives/menu/menu.module';
 export { ValidatorModule } from "./directives/validator/validator.module";
 export { NoContentModule } from "./components/no-content/no-content.module";
-export * from "./providers/profile/profile.module";
 var CoreModule = (function () {
     function CoreModule(parentModule) {
         if (parentModule) {
@@ -76,8 +74,7 @@ CoreModule.decorators = [
                 imports: [
                     IonicModule,
                     HttpClientModule,
-                    TranslateModule.forChild(),
-                    ProfileModule
+                    TranslateModule.forChild()
                 ],
                 exports: [
                     IonicModule,
@@ -87,8 +84,7 @@ CoreModule.decorators = [
                     AvatarModule,
                     MenuModule,
                     ValidatorModule,
-                    NoContentModule,
-                    ProfileModule
+                    NoContentModule
                 ]
             },] },
 ];

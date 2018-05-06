@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
 import { STORE_LIST } from '../config/app.store';
-import { CoreStore, LangService, ProfileService } from "mobility-lib";
+import { CoreStore, LangService } from "mobility-lib";
 
 @Injectable()
 export class AppInit {
@@ -11,8 +11,7 @@ export class AppInit {
   constructor(
     private storage: Storage,
     private store: CoreStore,
-    private langService: LangService,
-    private pfService : ProfileService
+    private langService: LangService
   ) {
     this.init();
   }
@@ -24,9 +23,6 @@ export class AppInit {
           this.store.onChange.subscribe(data => {
             this.storage.set(data.name, data.value);
           });
-          return this.pfService.load();
-        })
-        .then(()=>{
           this.langService.setLang();
           resolve(true)
         });

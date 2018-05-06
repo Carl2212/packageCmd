@@ -5,22 +5,19 @@ import { CoreStore } from '../core.store';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/timeout';
 import 'rxjs/add/operator/catch';
-import { ProfileStore, PROFILETICKET } from "./profile/profile.store";
 
 @Injectable()
 export class HttpInterceptorService implements HttpInterceptor {
 
 	constructor(
-	  private store: CoreStore,
-    private profileStore : ProfileStore
+	  private store: CoreStore
   ) {}
 
  	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 	  //Is it coming from profile requrest？
-    let url = this.profileUrl(request.url);
     request = request.clone({
-    	url: url ? url : this.resetUrl(request.url),
-      headers: url ? this.profileStore.headers : this.store.headers
+    	url: this.resetUrl(request.url),
+      headers: this.store.headers
     });
 
     return next.handle(request)
@@ -46,11 +43,4 @@ export class HttpInterceptorService implements HttpInterceptor {
 			return Observable.throw('timeout');
 		}
 	}
-  profileUrl(url: string) : string {
-    if(url.indexOf(PROFILETICKET) > -1) {
-      let api = url.split(PROFILETICKET)[0];
-      return `${this.profileStore.server}${this.store.api[api]}`;
-    }
-    return null;
-  }
 }

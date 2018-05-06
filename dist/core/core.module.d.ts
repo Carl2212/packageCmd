@@ -11,7 +11,6 @@ export { AvatarModule } from './components/avatar/avatar.module';
 export { MenuModule } from './directives/menu/menu.module';
 export { ValidatorModule } from "./directives/validator/validator.module";
 export { NoContentModule } from "./components/no-content/no-content.module";
-export * from "./providers/profile/profile.module";
 export interface CoreModuleConfig {
     store?: ClassProvider;
     interceptor?: Provider;

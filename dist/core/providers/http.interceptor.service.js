@@ -3,19 +3,16 @@ import { CoreStore } from '../core.store';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/timeout';
 import 'rxjs/add/operator/catch';
-import { ProfileStore, PROFILETICKET } from "./profile/profile.store";
 var HttpInterceptorService = (function () {
-    function HttpInterceptorService(store, profileStore) {
+    function HttpInterceptorService(store) {
         this.store = store;
-        this.profileStore = profileStore;
     }
     HttpInterceptorService.prototype.intercept = function (request, next) {
         var _this = this;
         //Is it coming from profile requrest？
-        var url = this.profileUrl(request.url);
         request = request.clone({
-            url: url ? url : this.resetUrl(request.url),
-            headers: url ? this.profileStore.headers : this.store.headers
+            url: this.resetUrl(request.url),
+            headers: this.store.headers
         });
         return next.handle(request)
             .timeout(this.store.time)
@@ -40,13 +37,6 @@ var HttpInterceptorService = (function () {
             return Observable.throw('timeout');
         }
     };
-    HttpInterceptorService.prototype.profileUrl = function (url) {
-        if (url.indexOf(PROFILETICKET) > -1) {
-            var api = url.split(PROFILETICKET)[0];
-            return "" + this.profileStore.server + this.store.api[api];
-        }
-        return null;
-    };
     return HttpInterceptorService;
 }());
 export { HttpInterceptorService };
@@ -56,6 +46,5 @@ HttpInterceptorService.decorators = [
 /** @nocollapse */
 HttpInterceptorService.ctorParameters = function () { return [
     { type: CoreStore, },
-    { type: ProfileStore, },
 ]; };
 //# sourceMappingURL=http.interceptor.service.js.map

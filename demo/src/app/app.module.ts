@@ -13,13 +13,12 @@ import { appInitFactory, TRANSLATIONS } from "../config/common";
 import { AppStore } from "../config/app.store";
 import { App } from "./app.component";
 import { AppInit } from "./app.service";
-import { AUTHCONFIG, BLANKCONFIG, SETTINGSCONFIG, WELCOMECONFIG } from "../config/common";
 import { ClearCache } from "../component/clearCache/clearCache";
 import { LeftNav } from "../pages/leftNav/leftNav";
 import { HomePage } from '../pages/home/home';
 
 
-import { CoreModule, CoreStore, AuthModule, DesktopModule, SettingsModule, BlankModule, LeftNavbarModule, WelcomeModule } from "mobility-lib";
+import { CoreModule, CoreStore, LeftNavbarModule } from "mobility-lib";
 
 @NgModule({
   declarations: [
@@ -51,11 +50,6 @@ import { CoreModule, CoreStore, AuthModule, DesktopModule, SettingsModule, Blank
         useClass: AppStore
       }
     }),
-    AuthModule.forRoot(AUTHCONFIG),
-    DesktopModule,
-    SettingsModule.forRoot(SETTINGSCONFIG),
-    WelcomeModule.forRoot(WELCOMECONFIG),
-    BlankModule.forRoot(BLANKCONFIG),
     LeftNavbarModule
   ],
   bootstrap: [IonicApp],

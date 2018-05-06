@@ -61,7 +61,6 @@ function getProdLoaders() {
     }
     return devConfig.module.loaders;
 }
-console.log(path.resolve('node_modules'));
 var devConfig = {
     entry: process.env.IONIC_APP_ENTRY_POINT,
     output: {

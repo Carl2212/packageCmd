@@ -4,10 +4,9 @@ import {Platform, NavController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 
 
-import { NavStack, AuthService, Auth, Desktop, Setting, Blank, Welcome, WelcomeController } from "mobility-lib";
+import { NavStack } from "mobility-lib";
 
 import { LeftNav } from "../pages/leftNav/leftNav";
-import { HomePage } from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,9 +20,7 @@ export class App {
     private platform: Platform,
     private statusBar: StatusBar,
     private splashScreen: SplashScreen,
-    private navStack: NavStack,
-    private authService: AuthService,
-    private welcomeCtrl: WelcomeController,
+    private navStack: NavStack
   ) {
     this.initializeApp();
   }
@@ -46,44 +43,7 @@ export class App {
   }
 
   ngOnInit() {
-    if (this.welcomeCtrl.isShowWelcome()) {
-      this.root.setRoot(Welcome);
-      this.welcomeCtrl.leavePage
-        .subscribe(isPop => {
-          this.isLogin();
-        });
-    } else {
-      this.isLogin();
-    }
-
-    this.authService.stateChange
-      .subscribe((state: number) => {
-        if (state === 3){
-        this.root.setRoot(Desktop, {
-          left: LeftNav,
-          content: HomePage,
-          right: Setting
-        });
-        }
-      });
-  }
-
-  isLogin() {
-    let token = this.authService.checkToken();
-    if(token) {
-      let content: Component = Blank;
-      this.pushToDeskTop(content);
-    }else{
-      this.root.setRoot(Auth);
-    }
-  }
-
-  pushToDeskTop(content: Component) {
-    this.root.setRoot(Desktop, {
-      left: LeftNav,
-      content: content,
-      right: Setting
-    });
+      this.root.setRoot(LeftNav);
   }
 }
 
