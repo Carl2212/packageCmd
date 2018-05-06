@@ -57,7 +57,7 @@ task('commit-changes' ,()=>{
 });
 
 task('push-changes' , (done)=>{
-  push('origin','master',{args:'--tags'});
+  push('origin','master',{args:'--tags'},done);
 });
 
 task('create-new-tag' , (done)=>{
