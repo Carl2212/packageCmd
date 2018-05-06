@@ -1,0 +1,8 @@
+.idea/
+.sourcemaps/
+node_modules/
+demo/www/
+platforms/
+plugins/
+resource/
+mobility-lib/

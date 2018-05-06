@@ -1,0 +1,33 @@
+{
+  "app": {
+    "appName": "iTWO 4.0 缺陷管理",
+    "defectMgnt": "缺陷管理",
+    "itwo": "iTWO 4.0"
+  },
+  "error": {
+    "loginInfoError": "用户名或者密码错误。"
+  },
+  "clearCache": {
+    "clearCache": "清除缓存",
+    "clearCacheSuccess": "成功清楚图版缓存"
+  },
+  "welcome": {
+    "screen1": {
+      "title": "欢迎",
+      "description": "通过iTWO 4.0 Defect Management app在移动设备上轻松记录、追踪、管理你的缺陷。"
+    },
+    "screen2": {
+      "title": "管理建筑缺陷",
+      "description": "处理建筑缺陷的质量管理工具。 根据项目浏览所有的缺陷，从而获得所有记录缺陷的概况。"
+    },
+    "screen3": {
+      "title": "现场记录缺陷",
+      "description": "记录缺陷的详细信息，例如缺陷状态、类型、位置。关联缺项到iTWO 4.0的进度计划、施工组织、商业伙伴等。"
+    },
+    "screen4": {
+      "title": "添加评论&图片",
+      "description": "通过给缺陷添加评论和你的同事一起协同工作。用你的移动设备给缺陷拍照使缺陷可视化。"
+    },
+    "started": "开始"
+  }
+}

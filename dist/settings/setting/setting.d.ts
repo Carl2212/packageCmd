@@ -1,0 +1,31 @@
+import { Component, ComponentFactoryResolver, ComponentRef, ViewContainerRef } from '@angular/core';
+import { App } from 'ionic-angular';
+import { AuthService } from "../../auth/auth.service";
+import { CoreStore } from "../../core/core.store";
+import { SettingsService } from "../config";
+import { ProfileService } from "../../core/providers/profile/profile.service";
+import { TranslateService } from "@ngx-translate/core";
+export declare class Setting {
+    private appCtrl;
+    private authService;
+    private store;
+    private cfr;
+    private stService;
+    private pfService;
+    tlService: TranslateService;
+    about: Component;
+    settingCompany: Component;
+    language: Component;
+    SettingProfile: Component;
+    user: any;
+    showWelcome: boolean;
+    ioncontent: ViewContainerRef;
+    compRef: ComponentRef<any>;
+    constructor(appCtrl: App, authService: AuthService, store: CoreStore, cfr: ComponentFactoryResolver, stService: SettingsService, pfService: ProfileService, tlService: TranslateService);
+    loadComponent(comp: any): void;
+    initUser(): void;
+    getLanguage(currentLang: any): string;
+    ngOnInit(): void;
+    logout(): void;
+    setShowWelcome(): void;
+}

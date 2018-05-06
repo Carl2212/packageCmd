@@ -1,0 +1,33 @@
+{
+  "app": {
+    "appName": "iTWO 4.0 Defect Management",
+    "defectMgnt": "Defect Management",
+    "itwo": "iTWO 4.0"
+  },
+  "error": {
+    "loginInfoError": "Incorrect username or password."
+  },
+  "clearCache": {
+    "clearCache": "Clear Cache",
+    "clearCacheSuccess": "Clear Image Cache Successfully"
+  },
+  "welcome": {
+    "screen1": {
+      "title": "Welcome",
+      "description": "Manage defects directly from the field with the iTWO 4.0 Defect Management app. A tool for conveniently recording and tracking defects on your mobile device."
+    },
+    "screen2": {
+      "title": "Manage Construction Defects",
+      "description": "Quality management tool for handling construction defects. Browse all defects by project and get a complete overview of all recorded defects."
+    },
+    "screen3": {
+      "title": "Capture Defects On-Site",
+      "description": "Record defects on the go. Specify details such as defect status, type, location and also link information to iTWO 4.0 Schedules, Activities, Business Partners and more."
+    },
+    "screen4": {
+      "title": "Add Comments & Photos",
+      "description": "Collaborate and share information with your co-workers by adding comments to defects. Visualize and capture defects by taking photos with your mobile device."
+    },
+    "started": "Get Started"
+  }
+}

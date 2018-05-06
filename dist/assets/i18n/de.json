@@ -1,0 +1,102 @@
+{
+  "common": {
+    "save": "Speichern",
+    "new": "Neu",
+    "edit": "Bearbeiten",
+    "cancel": "Abbrechen",
+    "search": "Suchen",
+    "delete": "Löschen",
+    "success": "Änderungen gespeichert",
+    "ok": "OK",
+    "noData": "Kein {{key}}."
+  },
+  "auth": {
+    "server": "Server",
+    "url": "URL",
+    "apply": "Anwenden",
+    "login": "Login",
+    "loginWithProfile" : "!Login with profiles",
+    "userName": "Benutzername",
+    "password": "Passwort",
+    "remember": "Merken",
+    "serverSetting": "Serverkonfiguration",
+    "role": "Rolle",
+    "logout": "Ausloggen",
+    "scan": "Scannen des QR codes",
+    "lightOn": "Taschenlampe an",
+    "lightOff": "Taschenlampe aus",
+    "code": "QR codes"
+  },
+  "setting": {
+    "setting": "Einstellungen",
+    "language": "Sprache",
+    "version": "Version",
+    "about": "Über",
+    "company": "Mandant",
+    "showScreens": "Anzeigen von Willkommensbildschirm",
+    "profile": "!Profile"
+  },
+  "language": {
+    "en": "English",
+    "de": "Deutsch",
+    "zh": "中文"
+  },
+  "reminder": {
+    "Zu lang": "{{key}} ist zu lang.",
+    "blank": "{{key}} kann nicht leer sein.",
+    "select": "Bitte wählen Sie einen {{key}}.",
+    "emailValid": "Bitte eine gültige E-Mailadresse eingeben.",
+    "uniqueValid" : "!!{{key}} must be unique"
+  },
+  "error": {
+    "loginInfoError": "Falscher Benutzername oder Passwort.",
+    "noContent" : "Es wurden keine Ergebnisse mit Ihrer Anfrage gefunden"
+  },
+  "http": {
+    "timeout": "Die Anfrage schlug fehl. Bitte überprüfen Sie ihre Netzwerkeinstellungen oder Serverkonfiguration.",
+    "400": "Die Anfrage schlug fehl. Die Anfrage konnte wegen eines Syntaxfehlers nicht vollendet werden.",
+    "401": "Nicht Autorisiert. Der Server verweigert die Antwort.",
+    "403": "Verboten. Der Server verweigert die Antwort.",
+    "404": "Nicht gefunden. Die angefragte Ressource wurde nicht gefunden.",
+    "405": "Methode nicht erlaubt. Anfrage wurde mit einer Methode welche in dieser Umgebung nicht unterstützt wird durchgeführt.",
+    "406": "Nicht Akzeptiert. Der Server generiert nur Antworten die der Client nicht akzeptiert.",
+    "407": "Proxy Authentifizeirung wird benötigt. Führen sie eine Proxyauthentifizierung durch.",
+    "408": "Anfrage timeout. Der Server unterbrach während er auf die Anfrage wartete.",
+    "409": "Konflikt. Die Anfrage kann aufgrund eines Konflikts in der Anfrage nicht fertiggestellt werden.",
+    "410": "Nicht gefunden. Die angefragte Ressource ist nicht länger verfügbar.",
+    "411": "Länge wird benötigt. Inhaltslänge ist nicht definiert.",
+    "412": "Die Voraussetzungen sind nicht zufriedenstellend. Die Voraussetzungen in der Anfragen werden vom Server als falsch bewertet.",
+    "413": "Anfrageentität zu groß. Der Server akzeptiert die Anfrage aufgrund der zu großen Größe nicht.",
+    "414": "Anfrage URI zu lang. Der Server akzeptiert die Anfrage aufgrund der zu langen URI nicht.",
+    "415": "Nicht unterstützter Medientyp. Der Server akzeptiert die Anfrage aufgrund des nicht unterstützten Medientyp nicht.",
+    "416": "HTTP Statuskode {0}.",
+    "500": "Interner Serverfehler.",
+    "501": "Nicht implementiert. Der Server versteht die Anfragemethode nicht, oder der Server ist nicht in der Lage die Anfrage zu vollenden.",
+    "503": "Der Service ist nicht erreichbar. Der Service ist zurzeit nicht erreichbar (der Server ist entweder überladen oder wegen Wartungsarbeiten nicht erreichbar). Bitte versuchen Sie es zu einem späteren Zeitpunkt noch einmal."
+  },
+  "help": {
+    "manualInput": "Händische Eingabe",
+    "forCorrect": "Für die korrekte Serverkonfiguration benötigen Sie die {{key}} Server-URL. Diese ist ähnlich der URL die sie sehen wenn Sie {{key}} öffnen. Sie müssen lediglich alles hinter und inklusive „client“ löschen.",
+    "forExample": "Sie öffnen {{key}} über folgende URL:",
+    "exampleThen": "In diesem Beispiel ist die korrekte Server-URL die folgende:",
+    "scanCode": "Für einen komfortableren Input der Server-URL können Sie auch den in {{key}} zur Verfügung gestellten QR Code verwenden. Diesen finden Sie unter den drei Punkten in der rechten Ecke und in der „Über“ Sektion.",
+    "loginCredentials": "Log in Berechtigungen",
+    "logInUse": "Damit Sie sich erfolgreich einloggen können verwenden Sie ihre {{key}} Benutzernamen und Passwort.",
+    "ifYou": "Wenn Sie sich nicht sicher bezüglich ihrer URL und Log In Daten sind, dann sollten Sie ihren {{key}} Administrator kontaktieren."
+  },
+  "profile" : {
+    "disabled" : "!Disabled",
+    "enabled" : "!Enabled",
+    "addfromlogin" : "!Profile From Login",
+    "addbymanual" : "!Manual Profile",
+    "description": "!The profiles feature has been disabled.In order to use this feature,please turn it on.",
+    "tipTitle" :"!Note",
+    "tipMessageP1" :"!With \"profilees\" you can create different app profiles to be used in the iTWO 4.0 apps installed on your device.This might be useful if you are working on different iTWO 4.0 instances located on different servers.",
+    "tipMessageP2" :"!Note:Profile information is stored on your device and this information is encrypted.However,it is highly recommended that you delete/clear all profiles before uninstalling the app",
+    "delTip" : "!Be Sure to delete",
+    "nonUniqueness" : "!Non-Uniqueness Login Information"
+  },
+  "profileEdit" :{
+    "name": "!Profile Name"
+  }
+}

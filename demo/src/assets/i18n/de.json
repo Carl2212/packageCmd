@@ -1,0 +1,33 @@
+{
+  "app": {
+    "appName": "iTWO 4.0 Mängelmanagement",
+    "defectMgnt": "Mängelmanagement",
+    "itwo": "iTWO 4.0"
+  },
+  "error": {
+    "loginInfoError": "Falscher Benutzername oder Passwort."
+  },
+  "clearCache": {
+    "clearCache": "Cache leeren",
+    "clearCacheSuccess": "Erfolgreich den Bilder-Cache geleert"
+  },
+  "welcome": {
+    "screen1": {
+      "title": "Willkommen",
+      "description": "Verwalten von Mängeln direkt von der Baustelle. iTWO 4.0 Defect Management - ein Werkzeug für das Erfassen und verfolgen von Mängeln auf mobilen Geräten."
+    },
+    "screen2": {
+      "title": "Verwalten von Mängeln",
+      "description": "Quality management tool for handling construction defects. Browse all defects by project and get a complete overview of all recorded defects."
+    },
+    "screen3": {
+      "title": "Aufnahme von Mängeln auf der Baustelle",
+      "description": "Weitere Spezifizierung von aufgenommenen Mängeln durch Stati, Typen, Orte sowie die Verlinkung mit Aktivitäten, Geschäftspartnern und vieles mehr."
+    },
+    "screen4": {
+      "title": "Add Comments & Photos",
+      "description": "Zusammenarbeit mit Kollegen über Kommentarfunktionen für einzelne Mängel. Aufnahme und Dokumentation von Mängel durch das aufnehmen von Bildern mit der Smartphone- oder Tabletkamera."
+    },
+    "started": "Los geht´s!"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "common": {
+    "ok": "确定",
+    "save": "保存",
+    "new": "新建",
+    "edit": "编辑",
+    "cancel": "取消",
+    "search": "搜索",
+    "delete": "删除",
+    "success": "修改已保存",
+    "noData": "没有 {{key}}。"
+  },
+  "auth": {
+    "server": "服务器",
+    "url": "URL",
+    "apply": "应用",
+    "login": "登录",
+    "loginWithProfile" : "!Login with profiles",
+    "userName": "用户名",
+    "password": "密码",
+    "serverSetting": "服务设置",
+    "role": "角色",
+    "logout": "退出",
+    "scan": "扫描二维码",
+    "lightOn": "闪光灯 开",
+    "lightOff": "闪光灯 关",
+    "code": "二维码"
+  },
+  "setting": {
+    "setting": "设置",
+    "language": "语言",
+    "version": "版本",
+    "about": "关于",
+    "company": "公司",
+    "showScreens": "显示欢迎界面",
+    "profile":"!Profile"
+  },
+  "language": {
+    "en": "English",
+    "de": "Deutsch",
+    "zh": "中文"
+  },
+  "reminder": {
+    "tooLong": "{{key}} 太和。",
+    "blank": "{{key}} 不能为空。",
+    "select": "请选择 {{key}}。",
+    "emailValid": "请输入合法的邮件地址",
+    "uniqueValid" : "!!{{key}} must be unique"
+  },
+  "error": {
+    "loginInfoError": "用户名或者密码错误。",
+    "noContent": "没有匹配的数据项"
+  },
+  "http": {
+    "timeout": "请求失败，请检查您的网络或者服务器配置。",
+    "400": "错误的请求。由于语法错误，该请求无法完成。",
+    "401": "未经授权。服务器拒绝响应。",
+    "403": "已禁止。服务器拒绝响应。",
+    "404": "未找到。无法找到请求的位置。",
+    "405": "方法不被允许。使用该位置不支持的请求方法进行了请求。",
+    "406": "不可接受。服务器只生成客户端不接受的响应。",
+    "407": "需要代理身份验证。客户端必须先使用代理对自身进行身份验证。",
+    "408": "请求超时。等待请求的服务器超时。",
+    "409": "冲突。由于请求中的冲突，无法完成该请求。",
+    "410": "过期。请求页不再可用。",
+    "411": "长度必需。未定义“内容长度”。",
+    "412": "前提条件不满足。请求中给定的前提条件由服务器评估为 false。",
+    "413": "请求实体太大。服务器不会接受请求，因为请求实体太大。",
+    "414": "请求 URI 太长。服务器不会接受该请求，因为 URL 太长。",
+    "415": "不支持的媒体类型。服务器不会接受该请求，因为媒体类型不受支持。",
+    "416": "HTTP 状态代码 {0}",
+    "500": "内部服务器错误。",
+    "501": "未实现。服务器不识别该请求方法，或者服务器没有能力完成请求。",
+    "503": "服务不可用。服务器当前不可用(过载或故障)。"
+  },
+  "help": {
+    "manualInput": "手动输入",
+    "forCorrect": "为了正确的服务器配置，请输入服务器URL。这条URL是跟您的{{key}}网站地址相似的。只需要省略后缀\"client\"。",
+    "forExample": "比如, 如您用的{{key}}地址是:",
+    "exampleThen": "正确的服务器URL就是:",
+    "scanCode": "为了方便地输入服务器URL，您也可以扫描二维码。按下“三点”，然后选“关于”，这里您能找到服务器URL的二维码。",
+    "loginCredentials": "登录凭据",
+    "logInUse": "登录APP是使用您的{{key}}登录凭据，并输入您在浏览器登录{{key}}使用的用户名与密码。",
+    "ifYou": "如果不确定服务器URL或登录凭据，请与您的{{key}}系统管理员联系。"
+  },
+  "profile" : {
+    "disabled" : "!Disabled",
+    "enabled" : "!Enabled",
+    "addfromlogin" : "!Profile From Login",
+    "addbymanual" : "!Manual Profile",
+    "description": "!The profiles feature has been disabled.In order to use this feature,please turn it on.",
+    "tipTitle" :"!Note",
+    "tipMessageP1" :"!With \"profilees\" you can create different app profiles to be used in the iTWO 4.0 apps installed on your device.This might be useful if you are working on different iTWO 4.0 instances located on different servers.",
+    "tipMessageP2" :"!Note:Profile information is stored on your device and this information is encrypted.However,it is highly recommended that you delete/clear all profiles before uninstalling the app",
+    "delTip" : "!Be Sure to delete",
+    "nonUniqueness" : "!Non-Uniqueness Login Information"
+  },
+  "profileEdit" :{
+    "name": "!Profile Name"
+  }
+}

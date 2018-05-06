@@ -1,0 +1,101 @@
+{
+  "common": {
+    "save": "Save",
+    "new": "New",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "search": "Search",
+    "delete": "Delete",
+    "success": "Changes Saved",
+    "ok": "OK",
+    "noData": "No {{key}}."
+  },
+  "auth": {
+    "server": "Server",
+    "url": "URL",
+    "apply": "Apply",
+    "login": "Login",
+    "loginWithProfile" : "Login with profiles",
+    "userName": "Username",
+    "password": "Password",
+    "serverSetting": "Server Configuration",
+    "role": "Role",
+    "logout": "Logout",
+    "scan": "Scan QR Code",
+    "lightOn": "Flashlight on",
+    "lightOff": "Flashlight off",
+    "code": "QR code"
+  },
+  "setting": {
+    "setting": "Settings",
+    "language": "Language",
+    "version": "Version",
+    "about": "About",
+    "company": "Company",
+    "showScreens": "Show welcome screens",
+    "profile":"Profile"
+  },
+  "language": {
+    "en": "English",
+    "de": "Deutsch",
+    "zh": "中文"
+  },
+  "reminder": {
+    "tooLong": "{{key}} is too long.",
+    "blank": "{{key}} cannot be blank.",
+    "select": "Please select the {{key}}.",
+    "emailValid": "Please enter a valid email.",
+    "uniqueValid" : "!!{{key}} must be unique"
+  },
+  "error": {
+    "loginInfoError": "Incorrect username or password.",
+    "noContent" : "No results matched your request"
+  },
+  "http": {
+    "timeout": "The request failed. Please check your network or server configuration.",
+    "400": "Bad request. The request could not be completed of a syntax error.",
+    "401": "Unauthorized. The server refused to respond.",
+    "403": "Forbidden. The server refused to respond.",
+    "404": "Not found. The requested resource could not be found.",
+    "405": "Method not allowed. Request is made using a request method that is not supported in this location",
+    "406": "Not acceptable. The server generates a response that the client does not accept.",
+    "407": "Proxy authentication is required. Use a proxy to authenticate yourself.",
+    "408": "Request timeout. The server timed out while waiting for the request.",
+    "409": "Conflict. The request cannot be completed because of a conflict in the request.",
+    "410": "Not found. The requested resource is no longer available.",
+    "411": "Length required. 'Content length' is not defined.",
+    "412": "The preconditions are not satisfied. The prerequisites given in the request are evaluated as false by the server.",
+    "413": "Request entity too large. The server will not accept the request because the request entity is too large.",
+    "414": "Request URI too long. The server will not accept the request because the request URI is too long.",
+    "415": "Unsupported media type. The server will not accept the request because the media type is not supported.",
+    "416": "HTTP status code {0}.",
+    "500": "Internal server error.",
+    "501": "Not implemented. The server does not recognize this request method or the server is not able to complete the request.",
+    "503": "The service is unavailable. The server is currently unavailable (server overloaded or down for maintenance). Please try again later."
+  },
+  "help": {
+    "manualInput": "Manual Input",
+    "forCorrect": "For correct server configuration you need to input the {{key}} Server URL. The path is similar to the web address you type in your web browser when accessing your {{key}} instance. All you need to do is remove the suffix \"client\".",
+    "forExample": "For example, if you access {{key}} via:",
+    "exampleThen": "Then, your correct server URL is:",
+    "scanCode": "For convenient input, you may also scan the QR code provided in {{key}}, Click on the \"three dots\" and go to \"About\", here you can find the QR code.",
+    "loginCredentials": "Login Credentials",
+    "logInUse": "Log in using your {{key}} credentials – the same username and password you use when logging into {{key}} on a desktop web browser.",
+    "ifYou": "If you are unsure about your server URL or login credentials, please contact your {{key}} system administrator."
+  },
+  "profile": {
+    "disabled" : "!Disabled",
+    "enabled" : "!Enabled",
+    "addfromlogin" : "Profile From Login",
+    "addbymanual" : "Manual Profile",
+    "description": "!The profiles feature has been disabled.In order to use this feature,please turn it on.",
+    "tipTitle" :"!Note",
+    "tipMessageP1" :"!With \"profilees\" you can create different app profiles to be used in the iTWO 4.0 apps installed on your device.This might be useful if you are working on different iTWO 4.0 instances located on different servers.",
+    "tipMessageP2" :"!Note:Profile information is stored on your device and this information is encrypted.However,it is highly recommended that you delete/clear all profiles before uninstalling the app",
+    "delTip" : "!Be Sure to delete",
+    "nonUniqueness" : "!Non-Uniqueness Login Information"
+  },
+  "profileEdit": {
+    "name": "!Profile Name"
+  }
+}

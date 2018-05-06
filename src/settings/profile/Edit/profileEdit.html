@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="white">
+    <ion-title>{{'setting.profile' | translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button clear color="primary" (click)="editStatus == 2 ? del() : pop()" margin-right [disabled]="editStatus == 2 && (pfService.loginProfileName == pfStore.name)">
+        <ion-icon name="{{editStatus == 2 ? 'trash' :  'close'}}"></ion-icon>
+      </button>
+      <button ion-button clear color="primary" (click)="editStatus == 2 ? (editStatus = 3) :  save()"
+              [disabled]="pfService.loginProfileName == pfStore.name || (editStatus != 2 && !profileForm.valid)">
+        <ion-icon name="{{editStatus == 2 ? 'edit' : 'lock'}}"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #profileForm="ngForm">
+    <ion-item text-right [class.error]="name.invalid && (name.dirty || name.touched)">
+      <ion-label stacked><span class="err-msg" >*</span>
+        <strong>{{'profileEdit.name' | translate}} : </strong>
+        <span class="err-msg" *ngIf="name.invalid && (name.dirty || name.touched)">
+
+          <span *ngIf="name.errors.required">
+            {{'reminder.blank' | translate: {key : ''} }}
+          </span>
+          <span *ngIf="name.errors.uniqueValidator">
+            {{'reminder.uniqueValid' | translate: {key : ''} }}
+          </span>
+        </span>
+      </ion-label>
+      <ion-input text-right [disabled]="editStatus == 2" id="name" type="text"  [uniqueValidator]="profileNameGroup" [(ngModel)]="pfStore.name" name="name"
+                 class="form-control"
+                 required
+                 #name="ngModel"></ion-input>
+    </ion-item>
+    <ion-item text-right [class.error]="loginName.invalid && (loginName.dirty || loginName.touched)">
+      <ion-label stacked><span class="err-msg">*</span>
+        <strong>{{'auth.userName' | translate}} : </strong>
+        <span class="err-msg" *ngIf="loginName.invalid && (loginName.dirty || loginName.touched)">{{'reminder.blank' | translate: {key : ''} }}</span>
+      </ion-label>
+      <ion-input text-right [disabled]="editStatus == 2" id="loginName" type="text" [(ngModel)]="pfStore.loginName" name="loginName" class="form-control" required #loginName="ngModel"></ion-input>
+    </ion-item>
+    <ion-item text-right [class.error]="password.invalid && (password.dirty || password.touched)">
+      <ion-label stacked><span class="err-msg">*</span>
+        <strong>{{'auth.password' | translate}} : </strong>
+        <span class="err-msg" *ngIf="password.invalid && (password.dirty || password.touched)">{{'reminder.blank' | translate: {key : ''} }}</span>
+      </ion-label>
+      <ion-input text-right [disabled]="editStatus == 2" id="password" type="password" [(ngModel)]="pfStore.password" name="password" class="form-control" required
+                  #password="ngModel"></ion-input>
+    </ion-item>
+    <ion-item text-right [class.error]="server.invalid && (server.dirty || server.touched)">
+      <ion-label stacked><span class="err-msg">*</span>
+        <strong>{{'auth.server' | translate}} : </strong>
+        <span class="err-msg" *ngIf="server.invalid && (server.dirty || server.touched)">{{'reminder.blank' | translate: {key : ''} }}</span>
+      </ion-label>
+      <ion-input text-right [disabled]="editStatus == 2" id="server" type="text" [(ngModel)]="pfStore.server" name="server" class="form-control" required #server="ngModel"></ion-input>
+    </ion-item>
+    <button ion-item full detail-none text-right [disabled]="editStatus == 2 || loginName.invalid || password.invalid || server.invalid" *ngIf="existCompanyRole"
+            (click)="editStatus != 2 ? selectCompany() : null">
+      <ion-label stacked><span class="err-msg">*</span>
+        <strong>{{'setting.company' | translate}} & {{'auth.role' | translate}}: </strong>
+      </ion-label>
+      <ion-label text-right type="text" >{{pfStore.company}}</ion-label>
+      <ion-label text-right type="text" >{{pfStore.role}}</ion-label>
+      <ion-input text-right disabled hidden id="companyRole" [(ngModel)]="pfStore.company" type="text" name="companyRole" class="form-control" required
+                 #companyRole="ngModel"></ion-input>
+    </button>
+  </form>
+</ion-content>

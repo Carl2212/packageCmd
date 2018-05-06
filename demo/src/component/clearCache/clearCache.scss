@@ -1,0 +1,19 @@
+setting {
+  .avatar {
+    color: white;
+    background-color: color($colors, primary);
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 2rem;
+  }
+  .content button {
+    width: 100%;
+  }
+  .item:last-child {
+    ion-label {
+      text-overflow: unset;
+      white-space: unset;
+    }
+  }
+}
