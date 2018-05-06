@@ -1,0 +1,101 @@
+$welcome_bg: #1174C1 !default;
+$swiper-pagination-bullet-active-bg: #007aff !default;
+$welcome_title_color : #f4f4f4 !default;
+$welcome_color : #f4f4f4 !default;
+$welcome_start_btn_color : rgba(255, 255, 255, .2) !default;
+
+page-welcome {
+  background: $welcome_bg;
+  .swiper-pagination-bullet-active {
+    background: $swiper-pagination-bullet-active-bg;
+  }
+  .pager-slide {
+    font-size: 25px;
+    color: $welcome_color;
+    h2 {
+      color: $welcome_title_color;
+    }
+    .slide-zoom {
+      height: calc(100% - 12em);
+    }
+    .title, .description {
+      height: 50%;
+    }
+    .title {
+      img {
+        height: 95%;
+        width: auto;
+      }
+      .small-image {
+        width: 12em;
+        height: auto;
+      }
+      h2.appName {
+        font-size: 1.3em !important;
+      }
+    }
+    .description {
+      letter-spacing: .1em;
+      h2 {
+        font-size: 1.2em;
+        margin: .8em 0;
+      }
+      p {
+        margin: 0 auto;
+        width: 90%;
+        height: calc(100% - 6.5em);
+        line-height: 2em;
+        font-size: .8em;
+      }
+      .bottom-image {
+        height: 2em;
+        width: auto;
+      }
+    }
+    .slide-button {
+      background: $welcome_start_btn_color;
+      border: 1px solid color($colors, light);
+      width: 10em;
+      letter-spacing: .1em;
+    }
+  }
+}
+
+@media all and (max-width: 812px) { //普通屏幕
+  page-welcome .pager-slide {
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 350px) { //最小屏幕
+  page-welcome .pager-slide {
+    font-size: 14px;
+  }
+}
+
+@media all and (orientation: portrait) { //竖屏
+  page-welcome .pager-slide .slide-zoom {
+    height: calc(100% - 12em);
+  }
+}
+
+@media all and (orientation: landscape) { //横屏
+  page-welcome .pager-slide .slide-zoom {
+    height: calc(100% - 10em);
+  }
+}
+
+@media all and (orientation: landscape) and (max-width: 812px) { //手机横屏
+  page-welcome .pager-slide {
+    font-size: 14px;
+    .slide-zoom {
+      height: calc(100% - 6em);
+    }
+    .title img {
+      height: 100%;
+    }
+    .slide-button {
+      height: 2em;
+    }
+  }
+}

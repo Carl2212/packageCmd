@@ -5,7 +5,7 @@ import { dest, src, task } from 'gulp';
 import * as bump from 'gulp-bump';
 import { readFileSync } from "fs";
 import * as gutil from 'gulp-util';
-import { init, commit, tag , push } from 'gulp-git';
+import { init, commit, tag , push, add } from 'gulp-git';
 import { filter } from 'gulp-filter';
 import { PACKAGEJSON_ROOT, PROJECT_ROOT } from "./config";
 import * as runSequence from "run-sequence";
@@ -52,6 +52,7 @@ task('bump-version' , ()=>{
 });
 task('commit-changes' ,()=>{
     return src('.')
+        .pipe(add())
         .pipe(commit(argv.message));
 });
 
