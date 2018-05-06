@@ -61,14 +61,16 @@ task('push-changes' , (done)=>{
 });
 
 task('create-new-tag' , (done)=>{
+    console.log('////////////////////');
     let version = getPackageJsonVersion();
+    console.log(version);
     tag(version , 'created Tag for version : '+version ,(err)=>{
+        console.log('error');
         if(err) {
             return done(err);
         }
         push('origin','master', {args:'--tags'},done);
     })
-    push('origin','master',{args:'--tags'});
 });
 
 function getPackageJsonVersion() {
