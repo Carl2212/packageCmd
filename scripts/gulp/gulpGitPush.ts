@@ -7,7 +7,8 @@ import { readFileSync } from "fs";
 import * as gutil from 'gulp-util';
 import { init, commit, tag , push } from 'gulp-git';
 import { filter } from 'gulp-filter';
-import { DIST_PACKAGEJSON_ROOT, PACKAGEJSON_ROOT, PROJECT_ROOT, DIST_ROOT } from "./config";
+import { PACKAGEJSON_ROOT, PROJECT_ROOT } from "./config";
+import * as runSequence from "run-sequence";
 
 const argv = require('yargs')
   .option(
@@ -25,30 +26,50 @@ const argv = require('yargs')
     }
   )
   .argv;
+task('publishReleasepackage', (done: (err: any) => void) => {
+    runSequence(
+        'bump-version',
+        'commit-changes',
+        'push-changes',
+        'create-new-tag',
+        (err : any)=>{
+            if(err){
+                gutil.log(err.message);
+            }else{
+                gutil.log('PUBLISH SUCCESSFUL~');
+            }
+            done(err);
+        }
+    );
+});
 
-task('bump' , ()=>{
-  return src([PACKAGEJSON_ROOT,DIST_PACKAGEJSON_ROOT],{base : PROJECT_ROOT})
+task('bump-version' , ()=>{
+  return src([PACKAGEJSON_ROOT],{base : PROJECT_ROOT})
     .pipe(bump({
       type : argv.branch || 'patch'
     }).on('error', gutil.log))
     .pipe(dest(PROJECT_ROOT));
 });
+task('commit-changes' ,()=>{
+    return src('.')
+        .pipe(commit(argv.message));
+});
 
-task('publishReleasepackage' , ['bump'] ,()=>{
-  return dest('./')
-      .pipe(commit(argv.message))
-      .pipe(filter('package.json'))
-      .pipe(push({
-          repository : 'origin',
-          refspec :'HEAD'
-      }))
-      .pipe(tag(getPackageJsonVersion()))
-      .pipe(push({
-          repository : 'origin',
-          refspec :'HEAD'
-      }))
+task('push-changes' , (done)=>{
+  push('origin','master',{args:'--tags'});
+});
+
+task('create-new-tag' , (done)=>{
+    let version = getPackageJsonVersion();
+    tag(version , 'created Tag for version : '+version ,(err)=>{
+        if(err) {
+            return done(err);
+        }
+        push('origin','master', {args:'--tags'},done);
+    })
+    push('origin','master',{args:'--tags'});
 });
 
 function getPackageJsonVersion() {
-  return JSON.parse(readFileSync(DIST_PACKAGEJSON_ROOT,'utf8')).version;
+  return JSON.parse(readFileSync(PACKAGEJSON_ROOT,'utf8')).version;
 };
